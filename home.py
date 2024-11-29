@@ -1,8 +1,10 @@
 import streamlit as st
+import base64
+from pathlib import Path
 
 # This must be the first Streamlit command
 st.set_page_config(
-    page_title="BioAnalysis Suite",
+    page_title="BioCore Suite",
     page_icon="🧬",
     layout="wide",
     initial_sidebar_state="expanded"
@@ -26,47 +28,100 @@ from python_styles.home_style import MAIN_CSS
 st.markdown(MAIN_CSS, unsafe_allow_html=True)
 from python_styles.sidebar_style import SIDEBAR_CSS
 
+def img_to_base64(img_path):
+    with open(img_path, "rb") as img_file:
+        return base64.b64encode(img_file.read()).decode()
+
 def landing():
-    st.markdown('<h1 class="main-title">🧬 BioAnalysis Suite</h1>', unsafe_allow_html=True)
+    st.markdown('<h1 class="main-title">🧬 BioCore Suite 🧬</h1>', unsafe_allow_html=True)
     
     st.markdown("""
-        ## Welcome to the BioAnalysis Suite
+        Welcome to BioCore 👋 !!
         
-        A comprehensive toolkit for molecular conformation visualization, proteomic data analysis, 
-        and genomic ontology navigation. This suite combines three powerful tools to help you 
-        analyze and understand biological data more effectively.
+        A comprehensive bioinformatics platform designed for molecular biology research and analysis. This suite integrates essential 
+        tools for exploring protein structures, analyzing sequence data, and understanding gene relationships through three 
+        specialized modules, these are mentioned as given
     """)
     
-    # Feature cards with updated descriptions and names
-    col1, col2, col3 = st.columns(3)
-    
-    with col1:
+    # First card: Image+title left, text right
+    image_path = "assets/protein-vis.png"
+    if Path(image_path).exists():
+        img_base64 = img_to_base64(image_path)
         st.markdown("""
-            <div class="card">
-                <img src="path_to_structure_viewer_image.png" alt="Bio-Molecular Conformational Explorer">
-                <h3>Bio-Molecular Conformational Explorer</h3>
-                <p>Interactive 3D visualization of molecular structures with customizable 
-                display options and detailed structural information.</p>
+            <style>
+            .hover-image {
+                filter: grayscale(100%);
+                transition: filter 0.3s ease;
+                cursor: pointer;
+            }
+            .hover-image:hover {
+                filter: grayscale(0%);
+            }
+            </style>
+        """, unsafe_allow_html=True)
+        
+        st.markdown(f"""
+            <div style="background: rgba(255, 255, 255, 0.1); border-radius: 10px; padding: 20px; margin-bottom: 40px; border: 1px solid rgba(255, 255, 255, 0.2);">
+                <div style="display: flex; gap: 20px;">
+                    <div style="flex: 1;">
+                        <h3 style="margin-top: 0; color: #42d64f; text-align: center;">Bio-Molecular Conformational Explorer</h3>
+                        <img class="hover-image" src="data:image/png;base64,{img_base64}" alt="Bio-Molecular Conformational Explorer" 
+                             style="width: 90%; height: 250px; border-radius: 15px; object-fit: cover; display: block; margin: 0 auto; border: 1px solid rgba(66, 214, 79, 0.3);">
+                    </div>
+                    <div style="flex: 1; display: flex; justify-content: center; align-items: center;">
+                        <p style="color: #ffffff; font-style: italic; text-align: center;">A real-time bio-molecular structure viewer that fetches and renders protein data 
+                        from the PDB database. Visualize structures with customizable representations 
+                        and color schemes, while accessing comprehensive protein information including 
+                        sequence data, citations, and structural parameters. Load structures via PDB IDs 
+                        or choose from curated examples with downloadable PDB files.</p>
+                    </div>
+                </div>
+            </div>
+        """, unsafe_allow_html=True)
+    else:
+        st.error("Image not found")
+    
+    # Second card: Text left, Image+title right
+    image_path = "assets/protein-profiling.png"
+    if Path(image_path).exists():
+        img_base64 = img_to_base64(image_path)
+        st.markdown(f"""
+            <div style="background: rgba(255, 255, 255, 0.1); border-radius: 10px; padding: 20px; margin-bottom: 40px; border: 1px solid rgba(255, 255, 255, 0.2);">
+                <div style="display: flex; gap: 20px;">
+                    <div style="flex: 1; display: flex; justify-content: center; align-items: center;">
+                        <p style="color: #ffffff; font-style: italic; text-align: center;">A protein sequence analysis tool that processes FASTA files for comprehensive protein characterization. 
+                        Perform general sequence analysis including length distributions, amino acid compositions, and organism statistics, 
+                        while enabling detailed protein examination through molecular property calculations (weight, pI, stability indices), 
+                        secondary structure predictions, and flexibility profiling with interactive visualizations.</p>
+                    </div>
+                    <div style="flex: 1;">
+                        <h3 style="margin-top: 0; color: #42d64f; text-align: center;">Proteomic Sequencing Analytics Dashboard</h3>
+                        <img class="hover-image" src="data:image/png;base64,{img_base64}" alt="Proteomic Sequencing Analytics Dashboard" 
+                            style="width: 90%; height: 250px; border-radius: 15px; object-fit: cover; display: block; margin: 0 auto; border: 1px solid rgba(66, 214, 79, 0.3);">
+                    </div>
+                </div>
             </div>
         """, unsafe_allow_html=True)
     
-    with col2:
-        st.markdown("""
-            <div class="card">
-                <img src="path_to_stats_image.png" alt="Proteomic Sequencing Analytics Dashboard">
-                <h3>Proteomic Sequencing Analytics Dashboard</h3>
-                <p>Comprehensive analysis of proteomic sequences, including 
-                composition, physical properties, and sequence patterns.</p>
-            </div>
-        """, unsafe_allow_html=True)
-    
-    with col3:
-        st.markdown("""
-            <div class="card">
-                <img src="path_to_obo_image.png" alt="Genomic Ontology Navigator">
-                <h3>Genomic Ontology Navigator</h3>
-                <p>Explore and analyze genomic ontologies with interactive visualizations, 
-                understanding term relationships, and detailed ontology information.</p>
+    # Third card: Image+title left, text right
+    image_path = "assets/geneomic-ontology.png"
+    if Path(image_path).exists():
+        img_base64 = img_to_base64(image_path)
+        st.markdown(f"""
+            <div style="background: rgba(255, 255, 255, 0.1); border-radius: 10px; padding: 20px; margin-bottom: 40px; border: 1px solid rgba(255, 255, 255, 0.2);">
+                <div style="display: flex; gap: 20px;">
+                    <div style="flex: 1;">
+                        <h3 style="margin-top: 0; color: #42d64f; text-align: center;">Genomic Ontology Navigator</h3>
+                        <img class="hover-image" src="data:image/png;base64,{img_base64}" alt="Genomic Ontology Navigator" 
+                            style="width: 90%; height: 250px; border-radius: 15px; object-fit: cover; display: block; margin: 0 auto; border: 1px solid rgba(66, 214, 79, 0.3);">
+                    </div>
+                    <div style="flex: 1; display: flex; justify-content: center; align-items: center;">
+                        <p style="color: #ffffff; font-style: italic; text-align: center;">A visualization system for exploring Gene Ontology terms and their interconnections. 
+                        Map relationships between biological processes, molecular functions, and cellular components using interactive 
+                        network displays. Examine term definitions, synonyms, and references while navigating parent-child relationships 
+                        through directed acyclic graphs.</p>
+                    </div>
+                </div>
             </div>
         """, unsafe_allow_html=True)
 
