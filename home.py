@@ -34,6 +34,23 @@ def img_to_base64(img_path):
 
 def landing():
     st.markdown('<h1 class="main-title">🧬 BioCore Suite 🧬</h1>', unsafe_allow_html=True)
+    st.markdown("""
+        <style>
+            @keyframes gradient-flow {
+                0% { background-position: 0% 50%; }
+                100% { background-position: 200% 50%; }
+            }
+        </style>
+        <div style='
+            height: 3px;
+            background: linear-gradient(to right, #006400, #9370DB, #006400);
+            background-size: 200% 100%;
+            margin: -5px auto 20px auto;
+            width: 80%;
+            border-radius: 20px;
+            animation: gradient-flow 3s linear infinite;
+        '></div>
+    """, unsafe_allow_html=True)
     
     st.markdown("""
         Welcome to BioCore 👋 !!
@@ -127,29 +144,80 @@ def landing():
 
 def main():
     st.markdown(SIDEBAR_CSS, unsafe_allow_html=True)
-    # Create sidebar navigation with centered title
-    st.sidebar.markdown("<h1 style='text-align: center;'>Navigation</h1>", unsafe_allow_html=True)
+    # Create sidebar navigation with centered title and gradient underline
+    st.sidebar.markdown("""
+        <style>
+            @keyframes gradient-flow {
+                0% { background-position: 0% 50%; }
+                100% { background-position: 200% 50%; }
+            }
+        </style>
+        <h1 style='text-align: center;'>Navigation</h1>
+        <div style='
+            height: 2px;
+            background: linear-gradient(to right, #006400, #9370DB, #006400);
+            background-size: 200% 100%;
+            margin: -5px auto 20px auto;
+            width: 80%;
+            border-radius: 10px;
+            animation: gradient-flow 3s linear infinite;
+        '></div>
+    """, unsafe_allow_html=True)
     
-    # Add CSS for full-width buttons with hover effect
+    # Enhanced button styling with gradient effects and animations
     st.markdown("""
         <style>
         .stButton button {
-            font-size: 20px;
-            font-family: 'Consolas' !important;
+            font-size: 18px;
+            font-family: 'Roboto', sans-serif !important;
+            font-weight: 500;
             width: 100%;
-            margin-bottom: 5px;
-            transition: all 0.3s ease;
-            background-color: #000000;
-            border: 0.5px solid #42d64f !important;
-            border-radius: 8px;
-            padding-top: 15px;
-            padding-bottom: 15px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            background: linear-gradient(135deg, rgba(0, 100, 0, 0.2) 0%, rgba(147, 112, 219, 0.2) 100%);
+            border: 1px solid rgba(147, 112, 219, 0.3) !important;
+            border-radius: 12px;
+            padding: 16px 24px;
             margin-bottom: 15px;
+            color: #ffffff !important;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1),
+                       inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            position: relative;
+            overflow: hidden;
         }
+
+        .stButton button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                120deg,
+                transparent,
+                rgba(147, 112, 219, 0.3),
+                transparent
+            );
+            transition: 0.5s;
+        }
+
         .stButton button:hover {
-            transform: scale(1.02);
-            background-color: rgba(46, 125, 50, 0.3) !important;  /* Dark green color with 0.8 opacity */
-            border: 1px solid #42d64f !important;
+            transform: translateY(-2px);
+            background: linear-gradient(135deg, rgba(0, 100, 0, 0.3) 0%, rgba(147, 112, 219, 0.3) 100%);
+            border: 1px solid rgba(147, 112, 219, 0.6) !important;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2),
+                       0 0 15px rgba(147, 112, 219, 0.2),
+                       inset 0 1px 0 rgba(255, 255, 255, 0.1);
+        }
+
+        .stButton button:hover::before {
+            left: 100%;
+        }
+
+        .stButton button:active {
+            transform: translateY(1px);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
         </style>
     """, unsafe_allow_html=True)
@@ -161,21 +229,21 @@ def main():
     # Navigation buttons with session state for each component
     if st.sidebar.button("Home"):
         st.session_state.current_page = "Home"
-    if st.sidebar.button("Bio-Molecular Conformational Explorer"):
-        st.session_state.current_page = "Bio-Molecular Conformational Explorer"
-    if st.sidebar.button("Proteomic Sequencing Analytics Dashboard"):
-        st.session_state.current_page = "Proteomic Sequencing Analytics Dashboard"
-    if st.sidebar.button("Genomic Ontology Navigator"):
-        st.session_state.current_page = "Genomic Ontology Navigator"
+    if st.sidebar.button("Conformational Explorer"):
+        st.session_state.current_page = "Conformational Explorer"
+    if st.sidebar.button("Proteomic Dashboard"):
+        st.session_state.current_page = "Proteomic Dashboard"
+    if st.sidebar.button("GO Navigator"):
+        st.session_state.current_page = "GO Navigator"
     
     # Display selected page based on session state
     if st.session_state.current_page == "Home":
         landing()
-    elif st.session_state.current_page == "Bio-Molecular Conformational Explorer":
+    elif st.session_state.current_page == "Conformational Explorer":
         bio_molecular_explorer_page()
-    elif st.session_state.current_page == "Proteomic Sequencing Analytics Dashboard":
+    elif st.session_state.current_page == "Proteomic Dashboard":
         proteomic_dashboard_page()
-    elif st.session_state.current_page == "Genomic Ontology Navigator":
+    elif st.session_state.current_page == "GO Navigator":
         genomic_navigator_page()
 
 if __name__ == "__main__":
