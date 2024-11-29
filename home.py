@@ -17,7 +17,7 @@ hide_decoration_bar_style = '''
 st.markdown(hide_decoration_bar_style, unsafe_allow_html=True)
 
 # Import the pages with updated names
-from molecular_viewer import main as molecular_viewer_page
+from bio_molecular_explorer import main as bio_molecular_explorer_page
 from proteomic_dashboard import main as proteomic_dashboard_page
 from genomic_navigator import main as genomic_navigator_page
 
@@ -43,8 +43,8 @@ def landing():
     with col1:
         st.markdown("""
             <div class="card">
-                <img src="path_to_structure_viewer_image.png" alt="Molecular Conformational Viewer">
-                <h3>Molecular Conformational Viewer</h3>
+                <img src="path_to_structure_viewer_image.png" alt="Bio-Molecular Conformational Explorer">
+                <h3>Bio-Molecular Conformational Explorer</h3>
                 <p>Interactive 3D visualization of molecular structures with customizable 
                 display options and detailed structural information.</p>
             </div>
@@ -106,8 +106,8 @@ def main():
     # Navigation buttons with session state for each component
     if st.sidebar.button("Home"):
         st.session_state.current_page = "Home"
-    if st.sidebar.button("Molecular Conformational Viewer"):
-        st.session_state.current_page = "Molecular Conformational Viewer"
+    if st.sidebar.button("Bio-Molecular Conformational Explorer"):
+        st.session_state.current_page = "Bio-Molecular Conformational Explorer"
     if st.sidebar.button("Proteomic Sequencing Analytics Dashboard"):
         st.session_state.current_page = "Proteomic Sequencing Analytics Dashboard"
     if st.sidebar.button("Genomic Ontology Navigator"):
@@ -116,8 +116,8 @@ def main():
     # Display selected page based on session state
     if st.session_state.current_page == "Home":
         landing()
-    elif st.session_state.current_page == "Molecular Conformational Viewer":
-        molecular_viewer_page()
+    elif st.session_state.current_page == "Bio-Molecular Conformational Explorer":
+        bio_molecular_explorer_page()
     elif st.session_state.current_page == "Proteomic Sequencing Analytics Dashboard":
         proteomic_dashboard_page()
     elif st.session_state.current_page == "Genomic Ontology Navigator":
