@@ -455,7 +455,7 @@ def main():
     '''
     st.markdown(hide_decoration_bar_style, unsafe_allow_html=True)
     
-    st.markdown("<h1 style='text-align: center;'>🧬 Protein Sequence Analysis Dashboard</h1>", unsafe_allow_html=True)
+    st.markdown("<h1 style='text-align: center;'>🧬 Proteomic Sequencing Analytics Dashboard 🧬</h1>", unsafe_allow_html=True)
     
     # Initialize session state variables
     if 'analysis_done' not in st.session_state:
@@ -464,16 +464,14 @@ def main():
         st.session_state.file_content = None
     
     # Add an expander for instructions and file upload
-    with st.expander("Instructions & File Upload"):
-        st.markdown("### Instructions")
+    with st.expander("About Proteomic Sequencing Analytics Dashboard", expanded=True):
         st.markdown("""
-        1. Upload a FASTA file to analyze the protein sequences
-        2. The file will be processed to show:
-            - Basic sequence statistics
-            - Length distributions
-            - Amino acid compositions
-            - Detailed protein properties
-        3. Use the tabs to explore different aspects of the analysis
+        ### 🧬 A Protein Sequence Analysis Dashboard
+        - Analyze .fasta files containing protein sequences
+        - Generate comprehensive sequence statistics
+        - Visualize protein properties and distributions
+        - Examine individual protein characteristics
+        - Support for both default and custom .fasta files
         """)
         
         # Step 1: File Selection
@@ -484,22 +482,22 @@ def main():
                        border-radius: 5px;
                        margin-bottom: 15px;'>
                 <span style='color: #42d64f; font-weight: bold;'>STEP 1</span>
-                <span style='margin-left: 8px;'>Select FASTA File Source</span>
+                <span style='margin-left: 8px;'>Select .fasta File Source</span>
             </div>
         """, unsafe_allow_html=True)
         
-        st.markdown("<p style='font-size: 1.1em;'>Choose FASTA file source:</p>", unsafe_allow_html=True)
+        st.markdown("<p style='font-size: 1.1em;'>Choose .fasta file source:</p>", unsafe_allow_html=True)
         file_option = st.radio(
             "",
-            ["Use default sequences", "Upload custom FASTA"],
+            ["Use the provided .fasta file", "Upload your own .fasta file"],
             key="file_source",
             horizontal=True,
             label_visibility="collapsed"
         )
         
         uploaded_file = None
-        if file_option == "Upload custom FASTA":
-            uploaded_file = st.file_uploader("Upload FASTA File", type=['fasta'])
+        if file_option == "Upload your own .fasta file":
+            uploaded_file = st.file_uploader("Upload your .fasta file", type=['fasta'])
             if uploaded_file:
                 file_content = uploaded_file.read().decode("utf-8")
                 st.session_state.file_content = file_content
