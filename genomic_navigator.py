@@ -130,17 +130,15 @@ def main():
     st.markdown(hide_decoration_bar_style, unsafe_allow_html=True)
     
     # Centered title
-    st.markdown("<h1 style='text-align: center;'>🧬 OBO File Data Analysis</h1>", unsafe_allow_html=True)
+    st.markdown("<h1 style='text-align: center;'>🧬 Genomic Ontology Navigator 🧬</h1>", unsafe_allow_html=True)
 
-    with st.expander("Instructions & File Selection"):
-        st.markdown("### Instructions")
+    with st.expander("About Genomic Ontology Navigator", expanded=True):
         st.markdown("""
-        1. Upload an .obo file to analyze the ontology structure
-        2. The file will be processed to show:
-            - Total number of terms and relationships
-            - Detailed information for each term
-            - Interactive DAG visualization
-        3. Use the dropdown to select specific terms and explore their relationships
+        ### 🧬 Gene Ontology Analysis Tool
+        - Discover and explore Gene Ontology (GO) terms through interactive visualization
+        - Visualize term relationships using dynamic Directed Acyclic Graphs (DAG)
+        - Access comprehensive term definitions and metadata
+        - Begin with our curated .obo file or analyze your own
         """)
         
         # Step 1: File Selection - Moved here, just above the radio buttons
@@ -151,21 +149,21 @@ def main():
                        border-radius: 5px;
                        margin-bottom: 15px;'>
                 <span style='color: #42d64f; font-weight: bold;'>STEP 1</span>
-                <span style='margin-left: 8px;'>Select OBO File Source</span>
+                <span style='margin-left: 8px;'>Select .obo File Source</span>
             </div>
         """, unsafe_allow_html=True)
         
-        st.markdown("<p style='font-size: 1.1em;'>Choose OBO file source:</p>", unsafe_allow_html=True)
+        st.markdown("<p style='font-size: 1.1em;'>Choose .obo file source:</p>", unsafe_allow_html=True)
         file_option = st.radio(
             "",
-            ["Use default GO-basic.obo", "Upload custom .obo file"],
+            ["Use the provided .obo file", "Upload your own .obo file"],
             key="file_source",
             horizontal=True,
             label_visibility="collapsed"
         )
         
         uploaded_file = None
-        if file_option == "Upload custom .obo file":
+        if file_option == "Upload your own .obo file":
             uploaded_file = st.file_uploader("Upload an .obo file", type=["obo"])
         else:
             # Use default file path
@@ -190,7 +188,7 @@ def main():
         # Center the analyze button using columns
         left_col, center_col, right_col = st.columns([1, 1.5, 1])
         with center_col:
-            analyze_button = st.button("Analyze OBO File", use_container_width=True)
+            analyze_button = st.button("Analyze Geneomic Ontologies", use_container_width=True)
 
     # Add horizontal line after expander
     st.markdown("---")
