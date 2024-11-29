@@ -33,7 +33,7 @@ def img_to_base64(img_path):
         return base64.b64encode(img_file.read()).decode()
 
 def landing():
-    st.markdown('<h1 class="main-title">🧬 BioCore Suite 🧬</h1>', unsafe_allow_html=True)
+    st.markdown('<h1 class="main-title">🧬 BioCore 🧬</h1>', unsafe_allow_html=True)
     st.markdown("""
         <style>
             @keyframes gradient-flow {
