@@ -235,6 +235,23 @@ def main():
 """, unsafe_allow_html=True)
     
     st.markdown("<h1 style='text-align: center;'>🧬 Bio-Molecular Conformational Explorer 🧬</h1>", unsafe_allow_html=True)
+    st.markdown("""
+        <style>
+            @keyframes gradient-flow {
+                0% { background-position: 0% 50%; }
+                100% { background-position: 200% 50%; }
+            }
+        </style>
+        <div style='
+            height: 3px;
+            background: linear-gradient(to right, #006400, #9370DB, #006400);
+            background-size: 200% 100%;
+            margin: -5px auto 20px auto;
+            width: 80%;
+            border-radius: 20px;
+            animation: gradient-flow 3s linear infinite;
+        '></div>
+    """, unsafe_allow_html=True)
     
     example_pdbs = {
         "Hemoglobin": "1HHB",
