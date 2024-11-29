@@ -10,10 +10,38 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-# Hide the decoration bar
+# Hide the decoration bar and adjust content position
 hide_decoration_bar_style = '''
     <style>
         header {visibility: hidden;}
+        div.block-container {
+            padding-top: 0rem;
+            margin-top: -2rem;
+        }
+        div.block-container.css-18e3th9.egzxvld2 {
+            padding-top: 0rem;
+            margin-top: -2rem;
+        }
+        div.css-1544g2n.e1tzin5v0 {
+            padding-top: 0rem;
+            margin-top: -2rem;
+        }
+        section.main.css-k1vhr4.egzxvld5 {
+            padding-top: 0rem;
+            margin-top: -2rem;
+        }
+        div.css-6qob1r.e1fqkh3o3 {
+            padding-top: 0rem;
+            margin-top: -2rem;
+        }
+        .css-18e3th9 {
+            padding-top: 0rem;
+            margin-top: -2rem;
+        }
+        .css-1d391kg {
+            padding-top: 0rem;
+            margin-top: -2rem;
+        }
     </style>
 '''
 st.markdown(hide_decoration_bar_style, unsafe_allow_html=True)
@@ -46,7 +74,7 @@ def landing():
             background: linear-gradient(to right, #006400, #9370DB, #006400);
             background-size: 200% 100%;
             margin: -5px auto 20px auto;
-            width: 80%;
+            width: 30%;
             border-radius: 20px;
             animation: gradient-flow 3s linear infinite;
         '></div>
