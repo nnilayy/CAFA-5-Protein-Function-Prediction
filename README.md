@@ -80,10 +80,30 @@ streamlit run home.py
 We welcome contributions! Here's how you can help:
 
 1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit changes (`git commit -m 'Add AmazingFeature'`)
-4. Push to branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+
+2. Clone your fork:
+```python
+git clone https://github.com/your-username/biocore.git
+cd biocore
+```
+
+3. Create your feature branch:
+```python
+git checkout -b feature/AmazingFeature
+```
+
+4. Make your changes and commit them:
+```python
+git add .
+git commit -m 'Add AmazingFeature'
+```
+
+5. Push to your branch:
+```python
+git push origin feature/AmazingFeature
+```
+
+Then open a Pull Request from your fork to our main repository.
 
 ## 🐛 Issues
 If you've found a bug or have a suggestion, feel free to open an issue.
