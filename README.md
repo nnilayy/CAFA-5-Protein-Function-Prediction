@@ -44,19 +44,19 @@ BioCore is a modern, integrated platform that combines three powerful modules fo
 
 1. **Clone the repository:**
 ```bash
-git clone https://github.com/yourusername/biocore.git
+git clone https://github.com/nnilayy/biocore.git
 cd biocore
 ```
 
-2. **Set up environment:**
+2. **Set up environment using `uv`:**
 ```bash
-python -m venv venv
+uv venv venv
 source venv/bin/activate  # On Windows: venv\Scripts\activate
 ```
 
 3. **Install dependencies:**
 ```bash
-pip install -r requirements.txt
+uv pip install -r requirements.txt
 ```
 
 4. **Launch the application:**
@@ -83,7 +83,7 @@ We welcome contributions! Here's how you can help:
 
 2. Clone your fork:
 ```python
-git clone https://github.com/your-username/biocore.git
+git clone https://github.com/nnilayy/biocore.git
 cd biocore
 ```
 
