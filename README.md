@@ -79,7 +79,7 @@ streamlit run home.py
 
 We welcome contributions! Here's how you can help:
 
-1. Fork the repository
+1. Fork the repository ([Click here to fork BioCore](https://github.com/nnilayy/BioCore/fork))
 
 2. Clone your fork:
 ```python
