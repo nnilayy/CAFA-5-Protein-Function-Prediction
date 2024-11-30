@@ -15,30 +15,57 @@ A comprehensive bioinformatics platform for molecular biology research and analy
 
 </div>
 
+## 🌟 Try it Now
+
+Experience BioCore directly through our live deployments:
+
+- **Streamlit Cloud**: [biocore.streamlit.app](https://biocore.streamlit.app)
+- **Hugging Face Spaces**: [huggingface.co/spaces/nnilayy/BioCore](https://huggingface.co/spaces/nnilayy/BioCore)
+
 ## 🌟 Overview
 
 BioCore is a modern, integrated platform that combines three powerful modules for bioinformatics research:
 
 ### 1. 🔬 Bio-Molecular Conformational Explorer
-- Real-time 3D visualization of protein structures
-- Direct PDB database integration
-- Multiple visualization styles (cartoon, stick, sphere, surface)
-- Comprehensive metadata display
-- Downloadable structure files
+
+Core Features:
+
+I. **PDB Integration & Structure Fetching**
+   - Retrieve protein structures in real-time from the Protein Data Bank directly using their unique PDB IDs
+
+II. **Interactive 3D Visualization & Styling**
+   - Dynamic 3D visualization of bio-molecular structures with adjustable viewing styles and interactive controls for detailed exploration of the proteins
+
+III. **Detailed Protein Structural Information**
+   - Displays comprehensive structural metadata (classification, deposition date, title, R-values) including experimental methods (X-ray diffraction, NMR) and resolution metrics (resolution, R-free, R-work)
+   - Provides detailed molecular information about protein chains and their source organisms
+   - Includes bibliographic references with complete citation details for research attribution
+
+IV. **Export Features**
+   - Facilitates direct PDB file download for offline access and further analysis
 
 ### 2. 🧬 Proteomic Sequencing Analytics Dashboard
-- FASTA file analysis and processing
-- Protein property calculations
-- Secondary structure prediction
-- Interactive sequence visualizations
-- Statistical analysis tools
+
+Core Features:
+
+I. **Analysis of Proteins from FASTA Files**
+   - Process protein sequences to generate general file-level statistics and specific protein analysis using interactive Plotly visualizations
+
+II. **General File-Level Analysis**
+   - Statistical exploration of sequence properties including length metrics and distributions, coupled with metadata insights on organism diversity and protein evidence levels, alongside global amino acid composition patterns
+
+III. **Specific Protein Analysis**
+   - Deep dive into individual proteins through biochemical characterization (molecular weight, pI, stability metrics), structural element predictions, and detailed amino acid compositional breakdown
 
 ### 3. 🔍 Genomic Ontology Navigator
-- Interactive GO term exploration
-- Relationship mapping
-- DAG (Directed Acyclic Graph) visualization
-- Custom .obo file support
-- Term metadata analysis
+
+Core Features:
+
+I. **Interactive Hierarchical DAGs for Genomic Ontologies**
+   - Process OBO files to create interactive networks of related Gene Ontology terms, exploring their hierarchical relationships across biological processes, molecular functions, and cellular components
+
+II. **GO Term Metadata Analysis**
+   - Extract and analyze metadata of GO terms (IDs, names, definitions, relationship types) from OBO files
 
 ## 🚀 Quick Start
 
