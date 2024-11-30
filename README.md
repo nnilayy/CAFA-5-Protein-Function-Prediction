@@ -17,9 +17,9 @@ A comprehensive bioinformatics platform for molecular biology research and analy
 
 ## 🌟 Try it Now
 
-Experience BioCore directly through our live deployments:
+Explore BioCore directly through these live site deployments:
 
-- **Streamlit Cloud**: [biocore.streamlit.app](https://biocore.streamlit.app)
+- **Streamlit Cloud**: [biocore-suite-nnilayy.streamlit.app](https://biocore-suite-nnilayy.streamlit.app)
 - **Hugging Face Spaces**: [huggingface.co/spaces/nnilayy/BioCore](https://huggingface.co/spaces/nnilayy/BioCore)
 
 ## 🌟 Overview
