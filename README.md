@@ -129,13 +129,12 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📬 Contact
 
-- **Project Lead**: [Your Name]
-- **Email**: [your.email@domain.com]
-- **Project Website**: [project-website-url]
-- **Documentation**: [documentation-url]
+Have questions or suggestions? Feel free to reach out!
+- **Author**: Nilay Kumar Bhatnagar
+- **Email**: nnilayy.work@gmail.com
 
 ---
 
 <div align="center">
-Made with ❤️ for the bioinformatics community
+Made with ❤️ for the Bioinformatics Research Community
 </div>
